@@ -1,9 +1,10 @@
 LOCAL_PATH:= $(call my-dir)
+PARENT_PATH := $(LOCAL_PATH)/..
 
 local_c_includes := \
-	$(NDK_PROJECT_PATH) \
-	$(NDK_PROJECT_PATH)/include \
-	$(NDK_PROJECT_PATH)/crypto
+	$(PARENT_PATH) \
+	$(PARENT_PATH)/include \
+	$(PARENT_PATH)/crypto
 
 local_src_files:= \
 	s2_meth.c \
@@ -51,6 +52,7 @@ LOCAL_C_INCLUDES += $(local_c_includes)
 LOCAL_SHARED_LIBRARIES += libcrypto
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE:= libssl
+LOCAL_EXPORT_C_INCLUDES := $(PARENT_PATH)/include
 include $(BUILD_SHARED_LIBRARY)
 
 ifeq ($(WITH_HOST_DALVIK),true)

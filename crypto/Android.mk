@@ -1,4 +1,5 @@
 LOCAL_PATH:= $(call my-dir)
+PARENT_PATH := $(LOCAL_PATH)/..
 
 arm_cflags := -DOPENSSL_BN_ASM_MONT -DAES_ASM -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM
 arm_src_files := \
@@ -471,11 +472,11 @@ local_src_files := \
 	x509v3/v3err.c
 
 local_c_includes := \
-	$(NDK_PROJECT_PATH) \
-	$(NDK_PROJECT_PATH)/crypto/asn1 \
-	$(NDK_PROJECT_PATH)/crypto/evp \
-	$(NDK_PROJECT_PATH)/include \
-	$(NDK_PROJECT_PATH)/include/openssl
+	$(PARENT_PATH) \
+	$(PARENT_PATH)/crypto/asn1 \
+	$(PARENT_PATH)/crypto/evp \
+	$(PARENT_PATH)/include \
+	$(PARENT_PATH)/include/openssl
 
 local_c_flags := -DNO_WINDOWS_BRAINDEATH
 
