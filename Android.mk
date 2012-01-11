@@ -12,5 +12,4 @@ subdirs := $(addprefix $(LOCAL_PATH)/,$(addsuffix /Android.mk, \
 	
 include $(subdirs)
 
-#LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
-LOCAL_EXPORT_C_INCLUDES := /Users/paddy/data/work/dev/android/external/openssl-android/include
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
