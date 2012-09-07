@@ -70,7 +70,7 @@ include $(LOCAL_PATH)/../android-config.mk
 # These flags omit whole features from the commandline "openssl".
 # However, portions of these features are actually turned on.
 LOCAL_CFLAGS += -DOPENSSL_NO_DTLS1
-
+LOCAL_LDLIBS += -lz
 
 LOCAL_MODULE:= openssl
 
